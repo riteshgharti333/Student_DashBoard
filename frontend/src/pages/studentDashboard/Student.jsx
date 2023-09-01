@@ -7,7 +7,7 @@ const Student = () => {
   return (
     <div className="studentDashboard">
       <div className="mainSection">
-        <DashboardSidebar />
+        {/* <DashboardSidebar /> */}
         <DashBoardCards />
       </div>
     </div>
