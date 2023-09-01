@@ -8,6 +8,7 @@ const DashBoardCards = () => {
       <DashBoardCard />
       <DashBoardCard />
       <DashBoardCard />
+      <DashBoardCard />
     </div>
   );
 };

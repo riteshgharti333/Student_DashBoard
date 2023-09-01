@@ -11,6 +11,7 @@ import DashboardHeader from "./component/DashboardHeader/DashboardHeader";
 import {QueryClient , QueryClientProvider} from "@tanstack/react-query"
 import DashboardSidebar from "./component/DashboardSidebar/DashboardSidebar";
 import DashBoardCards from "./component/DashBoardCards/DashBoardCards";
+import Navbar from "./component/Navbar/Navbar";
 
 
 const queryClient = new QueryClient();
@@ -21,11 +22,17 @@ function App() {
   const Layout = () => {
      return (
       <div className="app">
-        <DashboardHeader />
-        <DashboardSidebar />
-        <QueryClientProvider client={queryClient}>
-          <Outlet />
-        </QueryClientProvider>
+        <Navbar />
+        <div className="container">
+          <div className="menuContainer">
+            <DashboardSidebar />
+          </div>
+          <div className="contentContainer">
+            <QueryClientProvider client={queryClient}>
+              <Outlet />
+            </QueryClientProvider>
+          </div>
+        </div>
       </div>
      ) 
   };

@@ -1,7 +1,13 @@
+@import "../../responsive.scss";
+
 .sidebar {
   width: 200px;
   display: flex;
-  height: 90vh;
+  height: 100vh;
+  position: relative;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
   background: linear-gradient(
     to left,
     #52216e 0%,
@@ -9,18 +15,13 @@
     #52216e 50%,
     #52216e 100%
   );
-  position: relative;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
-  @media (max-width: 480px) {
-    flex: 0;
-    transform: translateX(-100%);
-    transition: transform 0.5s ease-in-out;
+  @include sm {
+    display: none;
   }
 
-  &.show {
-    transform: translateX(0);
+  @include md{
+    display: none;
   }
 
   .sidebar_content {
@@ -39,6 +40,10 @@
       &:hover {
         background: #0c356a;
       }
+
+      @include sm {
+        font-size: 12px;
+      }
     }
   }
 
@@ -55,9 +60,9 @@
       background: #0c356a;
       padding: 10px;
       text-align: center;
-      color: white;
       font-size: 20px;
       font-family: "Rubik", sans-serif;
+      color: white;
 
       @media (max-width: 480px) {
         font-size: 18px;
@@ -66,45 +71,8 @@
   }
 }
 
-.sidebarBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: teal;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  margin: 10px;
-  position: absolute;
-  cursor: pointer;
-
-  @media (min-width: 481px) {
+.Query{
+  @include sm {
     display: none;
-  }
-
-  &.leftSidebarBtn {
-    @media (min-width: 481px) {
-      display: none;
-    }
-    position: absolute;
-    left: 21%;
-    cursor: pointer;
-    z-index: 2;
-    .sidebarIcon {
-      transform: rotate(135deg);
-      position: absolute;
-      left: 33%;
-    }
-  }
-
-  .sidebarIcon {
-    width: 18px;
-    height: 18px;
-    border: solid white;
-    border-width: 0 4px 4px 0;
-    transform: rotate(-45deg);
-    position: absolute;
-    left: 20%;
   }
 }
