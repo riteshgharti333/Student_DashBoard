@@ -1,0 +1,70 @@
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    #52216e 0%,
+    #493078 30%,
+    #2b669c 50%,
+    #52216e 100%
+  );
+
+  .logo {
+    display: flex;
+    align-items: center;
+    img {
+      height: 50px;
+    }
+  }
+
+  .studentProfile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    img {
+      height: 40px;
+      width: 40px;
+      border: 3px solid rgb(255, 255, 255);
+      border-radius: 50%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .options {
+      display: none;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      background: #512b81;
+      color: white;
+      border-radius: 5px;
+      top: 100%;
+      right: 0;
+      z-index: 999;
+
+      span {
+        font-weight: 500;
+        cursor: pointer;
+        white-space: nowrap;
+        font-size: 20px;
+        color: aliceblue;
+        display: inline-block;
+        padding: 10px;
+        width: 100%;
+        &:hover {
+          background: #661fbd;
+        }
+      }
+
+      hr {
+        border: 0;
+        height: 2px;
+        background-color: white;
+        opacity: 0.5;
+      }
+    }
+  }
+}

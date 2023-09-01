@@ -1,0 +1,109 @@
+.sidebar {
+  display: flex;
+  flex: 1;
+  background: linear-gradient(
+    to left,
+    #52216e 0%,
+    #52216e 30%,
+    #52216e 50%,
+    #52216e 100%
+  );
+  position: relative;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+  @media (max-width: 480px) {
+    flex: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  &.show {
+    transform: translateX(0);
+  }
+
+  .sidebar_content {
+    width: 100%;
+    h3 {
+      padding: 10px 15px;
+      cursor: pointer;
+      font-family: "Rubik", sans-serif;
+      color: white;
+
+      &:first-child:hover {
+        background: #0c356a;
+        border-radius: 0px 7px 0px 0px;
+      }
+
+      &:hover {
+        background: #0c356a;
+      }
+    }
+  }
+
+  .queryRase {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    cursor: pointer;
+
+    &:hover {
+      background: #0c356a;
+    }
+    h3 {
+      background: #0c356a;
+      padding: 10px;
+      text-align: center;
+      color: white;
+      font-size: 20px;
+      font-family: "Rubik", sans-serif;
+
+      @media (max-width: 480px) {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.sidebarBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: teal;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 10px;
+  position: absolute;
+  cursor: pointer;
+
+  @media (min-width: 481px) {
+    display: none;
+  }
+
+  &.leftSidebarBtn {
+    @media (min-width: 481px) {
+      display: none;
+    }
+    position: absolute;
+    left: 21%;
+    cursor: pointer;
+    z-index: 2;
+    .sidebarIcon {
+      transform: rotate(135deg);
+      position: absolute;
+      left: 33%;
+    }
+  }
+
+  .sidebarIcon {
+    width: 18px;
+    height: 18px;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 20%;
+  }
+}
